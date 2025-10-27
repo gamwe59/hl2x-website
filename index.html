@@ -9,15 +9,19 @@
 </head>
 <body>
     <script type="module" src="index.js"></script>
-    <div class="backdropbackground"></div>
-    <div class="container">
+    <script type="module" src="bgcycle.js"></script>
+    <div class="backdropbackground" id="bg"></div>
+    <div class="container" id="container">
+        <img class="freeman" src="/imgs/xbox freeman transparent.png">
         <div class="panel rightAlign smallMenu" id="panel">
             <header>MAIN MENU</header>
             <div class="panelContent" id="pContent">
-                <button class="selected" id="b1">CONTINUE GAME</button>
-                <button id="b2">NEW GAME</button>
-                <button id="b3">LOAD GAME</button>
-                <button id="b4">OPTIONS</button>
+                <div id="c1">
+                    <button class="selected" id="b1">CONTINUE GAME<img class="selector" src=""></button>
+                    <button id="b2">NEW GAME</button>
+                    <button id="b3">LOAD GAME</button>
+                    <button id="b4">OPTIONS</button>
+                </div>
             </div>
         </div>
     </div>
