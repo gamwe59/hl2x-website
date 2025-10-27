@@ -16,7 +16,7 @@ body{
 }
 
 .backdropbackground{
-    background-image: url("/bgs/background02.png");
+    background-image: url("./bgs/background02.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -42,7 +42,7 @@ body{
     margin:0;
     padding:0;
     border:none;
-    background-image: url("/bgs/background02.png");
+    background-image: url("./bgs/background02.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -52,16 +52,16 @@ body{
 }
 
 .bg1 {
-    background-image: url("/bgs/background02.png");
+    background-image: url("./bgs/background02.png");
 }
 .bg2 {
-    background-image: url("/bgs/background03.png");
+    background-image: url("./bgs/background03.png");
 }
 .bg3 {
-    background-image: url("/bgs/background04.png");
+    background-image: url("./bgs/background04.png");
 }
 .bg4 {
-    background-image: url("/bgs/background01.png");
+    background-image: url("./bgs/background01.png");
 }
 
 .panel {
@@ -81,12 +81,20 @@ body{
     opacity: 1;
     transition-duration: 0.1s;
 }
-#c1 {
+.content {
     width:100%;
     height:100%;
     display: flex;
     flex-direction: column;
+    visibility: visible;
+    position: inherit;
 }
+
+.invisible {
+    visibility: hidden !important;
+    position:fixed;
+}
+
 .panelContentTransitioning {
     opacity: 0;
     transition-duration: 0s;
