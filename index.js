@@ -39,23 +39,25 @@ function transition(classes, title, sound, div) {
 }
 
 b1.onclick = function() {
-    transition("panel centerAlign centerLargeAlign wideMenu tallMenu", "DOWNLOADS", deploySound, c2)
+    transition("panel centerLargeAlign wideMenu tallMenu", "DOWNLOADS", deploySound, c2)
 }
 b2.onclick = function() {
-    transition("panel centerAlign smallMenu", "BLOG", deploySound, c3)
+    transition("panel centerSmallAlign smallMenu", "BLOG", deploySound, c3)
 }
 b3.onclick = function() {
     transition("panel rightAlign smallMenu", "GUIDE", retractSound, c4)
 }
 
 function panelTransEnd(event) {
-    panel.classList.add("panelAnimate")
-    clickSound.play();
-    header.textContent = nextTitle
-    setTimeout(function(){
-        pContent.classList.remove("panelContentTransitioning")
-        nextDiv.classList.remove("invisible")
-    }, 200);
+    if (pContent.classList.contains("panelContentTransitioning")) {
+        panel.classList.add("panelAnimate")
+        clickSound.play();
+        header.textContent = nextTitle
+        setTimeout(function(){
+            pContent.classList.remove("panelContentTransitioning")
+            nextDiv.classList.remove("invisible")
+        }, 200);
+    }
 }
 
 function STOPITSTOPSTOP(event) {
