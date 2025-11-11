@@ -5,6 +5,7 @@ let b1 = document.getElementById("b1")
 let b2 = document.getElementById("b2")
 let b3 = document.getElementById("b3")
 let b4 = document.getElementById("b4")
+let backButton = document.getElementById("back")
 
 let downloadButtons = document.querySelectorAll("[id='downloadButton']");
 
@@ -35,6 +36,7 @@ function transition(classes, title, sound, div) {
         nextTitle = title
         nextDiv = div
         curDiv.classList.add("invisible")
+        console.log(curDiv)
     }
 }
 
@@ -47,6 +49,9 @@ b2.onclick = function() {
 b3.onclick = function() {
     transition("panel rightAlign smallMenu", "GUIDE", retractSound, c4)
 }
+backButton.onclick = function() {
+    transition("panel rightAlign smallMenu", "MAIN MENU", retractSound, c1)
+}
 
 function panelTransEnd(event) {
     if (pContent.classList.contains("panelContentTransitioning")) {
@@ -56,6 +61,7 @@ function panelTransEnd(event) {
         setTimeout(function(){
             pContent.classList.remove("panelContentTransitioning")
             nextDiv.classList.remove("invisible")
+            curDiv = nextDiv
         }, 200);
     }
 }
