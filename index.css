@@ -293,6 +293,16 @@ header {
     left:50%;
     transform: translate(-50%, 0);
     white-space: nowrap;
+    overflow: hidden;
+}
+
+.scroller {
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0%;
+    bottom:0%;
+    transition-duration: 0.5s;
 }
 
 .filetodownload {
@@ -305,16 +315,35 @@ header {
     transform: translate(-50%, 0);
 }
 
+.page {
+    position: absolute;
+    color:white;
+    font-size: 2.5vh;
+    line-height: 4vh;
+    bottom:-5%;
+    left:50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+}
+
 .Arrow {
     background:none;
     border:none;
     height: 85%;
     bottom:0%;
     position:absolute;
-    width:7%
+    width:7%;
+    transition-duration: 0.25s;
 }
 .Arrow img {
     width:100%;
+}
+.disabledArrow {
+    filter: contrast(0.6) brightness(0.4) grayscale();
+    transition-duration: 0.25s;
+}
+.Arrow:hover img {
+    filter: contrast(0.8) brightness(0.8);
 }
 .left {
     left:1%;
@@ -330,7 +359,7 @@ header {
     border:none;
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 5%;
-    margin-right: 1.5%;
+    margin-right: 1%;
 }
 
 .downloadLink:hover {

@@ -16,6 +16,14 @@ let c2 = document.getElementById("c2")
 let c3 = document.getElementById("c3")
 let c4 = document.getElementById("c4")
 
+let scroller = document.getElementById("scroller")
+let downloadPages = Math.ceil(scroller.childElementCount/3)
+let curPage = 0
+let rArrow = document.getElementById("rArrow")
+let lArrow = document.getElementById("lArrow")
+let pageNumber = document.getElementById("pageNumber")
+pageNumber.textContent = (curPage+1)+"/"+downloadPages
+
 var deploySound = new Audio("./sfx/deploy.wav")
 var retractSound = new Audio("./sfx/retract.wav")
 var clickSound = new Audio("./sfx/click1.wav")
@@ -51,6 +59,36 @@ b3.onclick = function() {
 }
 backButton.onclick = function() {
     transition("panel rightAlign smallMenu", "MAIN MENU", retractSound, c1)
+}
+
+rArrow.onclick = function() {
+    if (curPage < downloadPages-1) {
+        deploySound.pause()
+        deploySound.currentTime = 0
+        deploySound.play()
+        curPage++
+        scroller.style.setProperty('left', (curPage*(-100))+"%")
+        pageNumber.textContent = (curPage+1)+"/"+downloadPages
+        lArrow.classList.remove("disabledArrow")
+        if (curPage == downloadPages-1) {
+            rArrow.classList.add("disabledArrow")
+        }
+    }
+}
+
+lArrow.onclick = function() {
+    if (curPage > 0) {
+        retractSound.pause()
+        retractSound.currentTime = 0
+        retractSound.play()
+        curPage--
+        scroller.style.setProperty('left', (curPage*(-100))+"%")
+        rArrow.classList.remove("disabledArrow")
+        pageNumber.textContent = (curPage+1)+"/"+downloadPages
+        if (curPage == 0) {
+            lArrow.classList.add("disabledArrow")
+        }
+    }
 }
 
 function panelTransEnd(event) {
