@@ -10,24 +10,45 @@
 <body>
     <script type="module" src="index.js"></script>
     <script type="module" src="bgcycle.js"></script>
-    <div class="backdropbackground" id="bg"></div>
+    <img class="backdropbackground" id="bg" src="./bgs/background02.png">
     <div class="container" id="container">
-        <img class="freeman" src="./imgs/xbox freeman transparent.png">
+        <div class="backgroundnew" id="backgroundnew"></div>
         <div class="panel rightAlign smallMenu" id="panel">
             <header id="header">MAIN MENU</header>
             <div class="panelContent" id="pContent">
                 <div id="c1" class="content">
-                    <button class="selected" id="b1">DOWNLOADS<img class="selector" src=""></button>
-                    <button id="b2">BLOG???</button>
-                    <button id="b3">GUIDE/WIKI??</button>
-                    <button id="b4">ABOUT</button>
+                    <button class="menubutton selected" id="b1">DOWNLOADS<img class="selector" src=""></button>
+                    <button class="menubutton" id="b2">BLOG???</button>
+                    <button class="menubutton" id="b3">GUIDE/WIKI??</button>
+                    <button class="menubutton" id="b4">ABOUT</button>
                 </div>
                 <div id="c2" class="content invisible">
+                    <p class="filetodownload">FILE TO DOWNLOAD</p>
+                    <button class="left Arrow">
+                        <img src="./imgs/arrowLeft.png">
+                    </button>
+                    <button class="right Arrow">
+                        <img src="./imgs/arrowRight.png">
+                    </button>
                     <div class="portDownloads">
-                        <div class="downloadLink"> </div>
+                        <button class="downloadLink" href="https://gmappers.net" id="downloadButton">
+                            <p>NAME</p>
+                            <img src="./downloadPreviews/gmconstruct.png">
+                        </button>
+                        <button class="downloadLink" href="https://gmappers.net" id="downloadButton">
+                            <p>NAME</p>
+                            <img src="./downloadPreviews/gmconstruct.png">
+                        </button>
+                        <button class="downloadLink" href="https://gmappers.net" id="downloadButton">
+                            <p>NAME</p>
+                            <img src="./downloadPreviews/gmconstruct.png">
+                        </button>
                     </div>
-                <div 
+                </div>
             </div>
+        </div>
+        <div class="navButtons">
+            <button class="navButton" id="back">BACK</button>
         </div>
     </div>
 </body>

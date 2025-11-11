@@ -6,6 +6,8 @@ let b2 = document.getElementById("b2")
 let b3 = document.getElementById("b3")
 let b4 = document.getElementById("b4")
 
+let downloadButtons = document.querySelectorAll("[id='downloadButton']");
+
 let header = document.getElementById("header")
 
 let c1 = document.getElementById("c1")
@@ -37,7 +39,7 @@ function transition(classes, title, sound, div) {
 }
 
 b1.onclick = function() {
-    transition("panel centerAlign wideMenu tallMenu", "DOWNLOADS", deploySound, c2)
+    transition("panel centerAlign centerLargeAlign wideMenu tallMenu", "DOWNLOADS", deploySound, c2)
 }
 b2.onclick = function() {
     transition("panel centerAlign smallMenu", "BLOG", deploySound, c3)
@@ -59,6 +61,12 @@ function panelTransEnd(event) {
 function STOPITSTOPSTOP(event) {
     event.stopPropagation()
 }
+
+downloadButtons.forEach((element) => {
+    element.addEventListener('click', function() {
+        window.open(element.getAttribute("href"), "_blank")
+    })
+})
 
 panel.addEventListener("transitionend", panelTransEnd)
 pContent.addEventListener("transitionend", STOPITSTOPSTOP)
